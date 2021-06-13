@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 function Servers() {
-  return(
+  return (
     <h1>This is the Servers page</h1>
   );
 }
