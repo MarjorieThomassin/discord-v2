@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 function Friends() {
-  return(
+  return (
     <h1>This is the Friends page</h1>
   );
 }
