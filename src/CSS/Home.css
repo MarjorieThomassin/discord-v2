@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.Title {
+  width: 100%;
+  height: auto;
+  background-color: #000000;
+  border-bottom: thick double rgb(185, 163, 62);
+}
+
+h1 {
+  font-family: 'Fredericka the Great', cursive;
+  text-align: center;
+  margin: 0;
+  font-size: 8vh;
+  padding: 10vh; 
+  color: white;
+  text-shadow: 0 0 10px rgb(105, 86, 35), 0 0 10px rgb(105, 86, 35);
+}
+
+p {
+  font-family: 'Cabin Sketch', cursive;
+  margin-top: 10vh;
+  font-size: 3vh;
+  text-align: center;
+  text-indent: 20px;
+}
+
+body {
+  background-color: #ffffff;
+}
