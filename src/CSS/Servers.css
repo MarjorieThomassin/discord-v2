@@ -1,20 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap');
 
+.serverContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width:100%;
+    margin: auto;
+
+}
+
 .TitleServer {
     width: 100%;
     height: auto;
     background-color: #000000;
     border-bottom: thick double rgb(185, 163, 62);
+    margin: auto;
   }
 
 .gridServer {
+    width: 100%;
+    margin: auto;
     display: grid;
-    grid-template-columns: repeat(10, 10fr);
-    gap: 10vh;
-    grid-auto-rows: 100px;
+    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(2rem, 1fr));
+   justify-content: center;
+    gap: 3vh; 
     align-items: center;
-    margin-left: 33vh;
-    margin-top: 10vh;
+    margin-top: 2vh;
 }
 
 .serverButton {
@@ -34,4 +46,11 @@
     transition: background-color 1s;
     color: rgb(255, 255, 255);
     background-color: rgb(0, 0, 0);
+}
+
+@media (min-width: 900px) {
+    .gridServer{
+    grid-template-columns:repeat(6, 10vh);
+    gap: 15vh;
+}
 }
