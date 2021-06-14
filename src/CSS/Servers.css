@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap');
+
+.TitleServer {
+    width: 100%;
+    height: auto;
+    background-color: #000000;
+    border-bottom: thick double rgb(185, 163, 62);
+  }
+
+.gridServer {
+    display: grid;
+    grid-template-columns: repeat(10, 10fr);
+    gap: 10vh;
+    grid-auto-rows: 100px;
+    align-items: center;
+    margin-left: 33vh;
+    margin-top: 10vh;
+}
+
+.serverButton {
+    border-radius: 100%;
+    padding: auto;
+    height: 10vh;
+    width: 10vh;
+    color: #000000;
+    background-color: #e9eb8b;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 2vh;
+    border-color:rgb(185, 163, 62);
+}
+
+.serverButton:hover{
+    transition: color 2s;
+    transition: background-color 1s;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}

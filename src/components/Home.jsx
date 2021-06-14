@@ -4,7 +4,7 @@ import '../CSS/Home.css';
 function Home() {
   return (
     <div className="HomeContainer">
-      <div className="Title">
+      <div className="TitleHome">
         <h1>Welcome to DiscordV2 !</h1>
       </div>
       <p>
