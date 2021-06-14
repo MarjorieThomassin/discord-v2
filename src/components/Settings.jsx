@@ -1,8 +1,11 @@
 import React from 'react';
+import '../CSS/Home.css';
 
 function Settings() {
   return (
-    <h1>This is the Settings page</h1>
+    <div className="Title">
+      <h1>This is the Settings page</h1>
+    </div>
   );
 }
 

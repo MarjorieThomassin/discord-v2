@@ -1,8 +1,11 @@
 import React from 'react';
+import '../CSS/Home.css';
 
 function Servers() {
   return (
-    <h1>This is the Servers page</h1>
+    <div className="Title">
+      <h1>This is the Servers page</h1>
+    </div>
   );
 }
 
