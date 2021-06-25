@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
-import { Redirect } from 'react-router-dom';
 import axios from 'axios';
+import Profile from './Profile';
 import '../CSS/Home.css';
 
 import { useLoginRequest } from '../context/loginRequest';
@@ -14,7 +14,9 @@ function Login() {
   console.log(useLoginRequest());
 
   if (loginRequest != null) {
-    return <Redirect to="/" />;
+    return (
+      <Profile />
+    );
   }
 
   return (
@@ -22,10 +24,10 @@ function Login() {
       <h1>This is the Login page</h1>
       <form action="post">
         <label className="email" htmlFor="email">
-          <input ref={emailInput} type="email" id="email" placeholder="your email" />
+          <input ref={emailInput} type="email" id="email" placeholder="your email" required />
         </label>
         <label htmlFor="password" id="password">
-          <input ref={passwordInput} type="password" placeholder="your password" />
+          <input ref={passwordInput} type="password" placeholder="your password" required />
         </label>
         <button
           value="submit"

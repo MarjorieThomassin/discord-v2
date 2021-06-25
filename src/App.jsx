@@ -1,13 +1,13 @@
 import React from 'react';
-import Login from './components/Login';
+import Auth from './components/Auth';
+// import Home from './components/Home';
 import './App.css';
-import { LoginRequestProvider } from './context/loginRequest';
 
 function App() {
   return (
-    <LoginRequestProvider>
-      <Login />
-    </LoginRequestProvider>
+    <div>
+      <Auth />
+    </div>
   );
 }
 

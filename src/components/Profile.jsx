@@ -4,14 +4,13 @@ import {
 } from 'react-router-dom';
 import '../CSS/NavBar.css';
 import Home from './Home';
-import Login from './Login';
 import DM from './DM';
 import Friends from './Friends';
 import Feed from './Feed';
 import Settings from './Settings';
 import Servers from './Servers';
 
-function NavBar() {
+function Profile() {
   return (
     <div className="NavContainer">
       <Router>
@@ -31,7 +30,6 @@ function NavBar() {
         <div className="ComponentsRoutes">
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/Login" component={Login} />
             <Route exact path="/Settings" component={Settings} />
             <Route exact path="/DM" component={DM} />
             <Route exact path="/Friends" component={Friends} />
@@ -44,4 +42,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Profile;
