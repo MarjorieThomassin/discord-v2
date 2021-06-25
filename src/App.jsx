@@ -1,10 +1,13 @@
 import React from 'react';
-import NavBar from './components/NavBar';
+import Login from './components/Login';
 import './App.css';
+import { LoginRequestProvider } from './context/loginRequest';
 
 function App() {
   return (
-    <NavBar />
+    <LoginRequestProvider>
+      <Login />
+    </LoginRequestProvider>
   );
 }
 
