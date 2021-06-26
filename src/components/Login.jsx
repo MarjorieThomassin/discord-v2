@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
+import { Redirect } from 'react-router-dom';
 import axios from 'axios';
-import Profile from './Profile';
-import '../CSS/Home.css';
+import '../CSS/Login.css';
 
 import { useLoginRequest } from '../context/loginRequest';
 
@@ -20,20 +20,21 @@ function Login() {
   }
 
   return (
-    <div className="Title">
-      <h1>This is the Login page</h1>
-      <form action="post">
-        <label className="email" htmlFor="email">
-          <input ref={emailInput} type="email" id="email" placeholder="your email" required />
+    <div id="container">
+      <h1>Connectez vous!</h1>
+      <form action="post" className="loginForm">
+        <label className="loginEmail" htmlFor="email">
+          <input className="inputLogin" ref={emailInput} type="email" id="email" placeholder="your email" required />
         </label>
-        <label htmlFor="password" id="password">
-          <input ref={passwordInput} type="password" placeholder="your password" required />
+        <label className="loginPassword" htmlFor="password" id="password">
+          <input className="inputLogin" ref={passwordInput} type="password" placeholder="your password" required />
         </label>
         <button
+          className="loginButton"
           value="submit"
           type="button"
           onClick={() => {
-            const url = 'http://localhost:8000/user';
+            const url = 'http://localhost:8000/login';
             axios.post(url, {
               email: emailInput.current.value,
               password: passwordInput.current.value,
