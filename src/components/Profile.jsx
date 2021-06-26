@@ -2,7 +2,7 @@ import React from 'react';
 import {
   BrowserRouter as Router, NavLink, Switch, Route,
 } from 'react-router-dom';
-import '../CSS/NavBar.css';
+import '../CSS/Profile.css';
 import Home from './Home';
 import DM from './DM';
 import Friends from './Friends';
