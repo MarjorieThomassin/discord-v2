@@ -7,6 +7,7 @@ function Register() {
 
   return (
     <div className="registerForm-container">
+      <h1>Inscrivez vous !</h1>
       <form
         className="registerForm"
         onSubmit={(event) => {
@@ -36,8 +37,8 @@ function Register() {
 
           <input className="inputRegister" ref={passwordInput} type="password" id="password" name="password" placeholder="VOTRE MOT DE PASSE" />
         </label>
-        <button type="submit">
-          Je crée mon compte!
+        <button className="registerButton" type="submit">
+          Valider
         </button>
       </form>
     </div>

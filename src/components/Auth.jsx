@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import Login from './Login';
+import { Redirect } from 'react-router-dom';
+// import Login from './Login';
 import '../CSS/Auth.css';
-import { LoginRequestProvider } from '../context/loginRequest';
-import Register from './Register';
-import { registerRequestProvider } from '../context/registerRequest';
+// import { LoginRequestProvider } from '../context/loginRequest';
+// import Register from './Register';
+// import { registerRequestProvider } from '../context/registerRequest';
+
 // import authbg from '../assets/auth-bg.png';
 
 function Auth() {
@@ -18,16 +20,11 @@ function Auth() {
       <div className="btn-log-containers">
         <button className="sbt-btn" type="submit" onClick={() => setButtonLogin(true)}>Connexion</button>
         {buttonLogin && (
-        <LoginRequestProvider>
-          <Login />
-        </LoginRequestProvider>
-
+        <Redirect to="/login" />
         )}
         <button className="sbt-btn" type="submit" onClick={() => setButtonRegister(true)}>Inscription</button>
         {buttonRegister && (
-        <registerRequestProvider>
-          <Register />
-        </registerRequestProvider>
+        <Redirect to="/register" />
 
         )}
       </div>

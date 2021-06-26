@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
+import { Redirect } from 'react-router-dom';
 import axios from 'axios';
-import Profile from './Profile';
 import '../CSS/Login.css';
 
 import { useLoginRequest } from '../context/loginRequest';
@@ -15,12 +15,12 @@ function Login() {
 
   if (loginRequest != null) {
     return (
-      <Profile />
+      <Redirect to="/profile" />
     );
   }
 
   return (
-    <div className="Title">
+    <div id="container">
       <h1>Connectez vous!</h1>
       <form action="post" className="loginForm">
         <label className="loginEmail" htmlFor="email">
@@ -34,7 +34,7 @@ function Login() {
           value="submit"
           type="button"
           onClick={() => {
-            const url = 'http://localhost:8000/user';
+            const url = 'http://localhost:8000/login';
             axios.post(url, {
               email: emailInput.current.value,
               password: passwordInput.current.value,
