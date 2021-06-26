@@ -15,7 +15,7 @@ function Login() {
 
   if (loginRequest != null) {
     return (
-      <Redirect to="/profile" />
+      <Redirect to="/profile/settings" />
     );
   }
 
