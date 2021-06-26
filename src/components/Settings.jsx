@@ -1,10 +1,56 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
+import axios from 'axios';
 import '../CSS/Home.css';
 
 function Settings() {
+  const pseudoInput = useRef();
+  const bioInput = useRef();
+
+  const [uploadFile, setUploadFile] = useState();
+
+  const changeAvatar = (event) => {
+    setUploadFile(event.target.files[0]);
+  };
+  const handleSubmit = () => {
+    const formData = new FormData();
+    formData.append('File', uploadFile);
+    const url = 'http://localhost:8000/upload';
+    axios.post(url, formData)
+      .then((response) => (console.log(response.data)));
+  };
+
+  const updateUser = () => {
+    axios.put('http://localhost:8000/user', {
+      pseudo: pseudoInput.current.value,
+      bio: bioInput.current.value,
+    })
+      .then((response) => (console.log(response.data)));
+  };
+
   return (
     <div className="Title">
-      <h1>This is the Settings page</h1>
+      <h1>Bienvenue !</h1>
+      <p>Pour pouvoir accéder à ton profil, merci de le compléter au préalable !</p>
+      <label className="pseudo" htmlFor="pseudo">
+        <input className="inputPseudo" type="pseudo" ref={pseudoInput} id="pseudo" placeholder="Ton Pseudo" />
+      </label>
+      <label className="bio" htmlFor="bio" id="bio">
+        <input className="inputBio" type="text" ref={bioInput} placeholder="Parle nous de toi !" />
+      </label>
+      <label className="image" htmlFor="image" id="image">
+        <input className="inputImage" type="file" onChange={changeAvatar} />
+      </label>
+      <div>
+        <button
+          type="submit"
+          onClick={() => {
+            handleSubmit();
+            updateUser();
+          }}
+        >
+          Sauvegarder
+        </button>
+      </div>
     </div>
   );
 }
