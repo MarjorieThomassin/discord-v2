@@ -1,9 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import '../CSS/Register.css';
 
 function Register() {
   const emailInput = useRef();
   const passwordInput = useRef();
+  const [isClicked, setIsClicked] = useState();
 
   return (
     <div className="registerForm-container">
@@ -30,16 +32,23 @@ function Register() {
       >
         <label className="emailRegister" htmlFor="email" id="email">
           {' '}
-          <input className="inputRegister" ref={emailInput} type="email" id="email" name="email" placeholder="INSEREZ VOTRE MAIL" />
+          <input className="inputRegister" ref={emailInput} type="email" id="email" name="email" placeholder="insérez votre email" />
 
         </label>
         <label className="passwordRegister" htmlFor="password" id="password">
 
-          <input className="inputRegister" ref={passwordInput} type="password" id="password" name="password" placeholder="VOTRE MOT DE PASSE" />
+          <input className="inputRegister" ref={passwordInput} type="password" id="password" name="password" placeholder="insérez votre mot de passe" />
         </label>
-        <button className="registerButton" type="submit">
-          Valider
-        </button>
+        <div className="btnRegister">
+          <button className="registerButton" type="submit">
+            Valider
+          </button>
+          <button className="registerButton" type="submit" onClick={() => setIsClicked(true)}>
+            {isClicked
+             && <Redirect to="/" />}
+            Retour
+          </button>
+        </div>
       </form>
     </div>
   );

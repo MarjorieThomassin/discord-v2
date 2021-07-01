@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useRef, useState } from 'react';
+import { useHistory, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import '../CSS/Login.css';
 
@@ -11,6 +11,8 @@ function Login() {
   const {
     setLoginRequest,
   } = useLoginRequest();
+
+  const [isClicked, setIsClicked] = useState();
 
   const history = useHistory();
 
@@ -46,13 +48,20 @@ function Login() {
         <label className="loginPassword" htmlFor="password" id="password">
           <input className="inputLogin" ref={passwordInput} type="password" placeholder="your password" required />
         </label>
-        <button
-          className="loginButton"
-          value="submit"
-          type="submit"
-        >
-          Valider
-        </button>
+        <div className="menfou">
+          <button
+            className="loginButton"
+            value="submit"
+            type="submit"
+          >
+            Valider
+          </button>
+          <button className="loginButton" type="submit" onClick={() => setIsClicked(true)}>
+            {isClicked
+             && <Redirect to="/" />}
+            Retour
+          </button>
+        </div>
       </form>
     </div>
   );
