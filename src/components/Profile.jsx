@@ -12,49 +12,45 @@ import Servers from './Servers';
 import { useLoginRequest } from '../context/loginRequest';
 
 function Profile() {
-  const {
-    loginRequest,
-  } = useLoginRequest();
-  console.log(loginRequest);
-  if (loginRequest === null) {
+  const { loginRequest } = useLoginRequest();
+  if (loginRequest == null) {
     return (
       <Redirect to="/login" />
     );
   }
+
+  const { pseudo } = loginRequest;
+
   return (
     <>
       <h1>
         Bienvenue sur ton profil
         {' '}
-        {loginRequest.email}
+        {pseudo}
       </h1>
-      <div className="NavContainer">
-        <Router>
-          <div className="LinkContainer">
-            <ul className="NavList">
-              <NavLink activeClassName="active" exact to="/"><li className="LinkNav">Home</li></NavLink>
-              <NavLink activeClassName="active" to="/Feed">
-                {' '}
-                <li className="LinkNav">Feed</li>
-              </NavLink>
-              <NavLink activeClassName="active" to="/Friends"><li className="LinkNav">Friends</li></NavLink>
-              <NavLink activeClassName="active" to="/Servers"><li className="LinkNav">Servers</li></NavLink>
-              <NavLink activeClassName="active" to="/Settings"><li className="LinkNav">Settings</li></NavLink>
-              <NavLink activeClassName="active" to="/DM"><li className="LinkNav">DM</li></NavLink>
-            </ul>
-          </div>
-          <div className="ComponentsRoutes">
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/Settings" component={Settings} />
-              <Route exact path="/DM" component={DM} />
-              <Route exact path="/Friends" component={Friends} />
-              <Route exact path="/Feed" component={Feed} />
-              <Route exact path="/Servers" component={Servers} />
-            </Switch>
-          </div>
-        </Router>
-      </div>
+      <Router>
+        <ul className="NavList">
+          <li className="LinkNav"><NavLink activeClassName="active" exact to="/">Home</NavLink></li>
+          <li className="LinkNav">
+            <NavLink activeClassName="active" to="/Feed">
+              {' '}
+              Feed
+            </NavLink>
+          </li>
+          <li className="LinkNav"><NavLink activeClassName="active" to="/Friends">Friends</NavLink></li>
+          <li className="LinkNav"><NavLink activeClassName="active" to="/Servers">Servers</NavLink></li>
+          <li className="LinkNav"><NavLink activeClassName="active" to="/profile/settings">Settings</NavLink></li>
+          <li className="LinkNav"><NavLink activeClassName="active" to="/DM">DM</NavLink></li>
+        </ul>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/settings" component={Settings} />
+          <Route exact path="/DM" component={DM} />
+          <Route exact path="/Friends" component={Friends} />
+          <Route exact path="/Feed" component={Feed} />
+          <Route exact path="/Servers" component={Servers} />
+        </Switch>
+      </Router>
     </>
   );
 }

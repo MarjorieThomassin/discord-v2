@@ -1,12 +1,18 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import '../CSS/Home.css';
+import { Redirect } from 'react-router-dom';
+import { useLoginRequest } from '../context/loginRequest';
 
 function Settings() {
   const pseudoInput = useRef();
   const bioInput = useRef();
+  const imageInput = useRef();
+
+  const { id } = useLoginRequest();
 
   const [uploadFile, setUploadFile] = useState();
+  const [saveBtn, setSaveBtn] = useState(false);
 
   const changeAvatar = (event) => {
     setUploadFile(event.target.files[0]);
@@ -20,9 +26,10 @@ function Settings() {
   };
 
   const updateUser = () => {
-    axios.put('http://localhost:8000/user', {
+    axios.put(`http://localhost:8000/settings/${id}`, {
       pseudo: pseudoInput.current.value,
       bio: bioInput.current.value,
+      image_path: imageInput.current.value,
     })
       .then((response) => (console.log(response.data)));
   };
@@ -38,7 +45,7 @@ function Settings() {
         <input className="inputBio" type="text" ref={bioInput} placeholder="Parle nous de toi !" />
       </label>
       <label className="image" htmlFor="image" id="image">
-        <input className="inputImage" type="file" onChange={changeAvatar} />
+        <input className="inputImage" ref={imageInput} type="file" onChange={changeAvatar} />
       </label>
       <div>
         <button
@@ -46,8 +53,10 @@ function Settings() {
           onClick={() => {
             handleSubmit();
             updateUser();
+            setSaveBtn(true);
           }}
         >
+          {saveBtn && <Redirect to="/profile" />}
           Sauvegarder
         </button>
       </div>

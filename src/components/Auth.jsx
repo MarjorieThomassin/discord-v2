@@ -14,6 +14,9 @@ function Auth() {
 
   return (
     <div id="auth">
+      <h1>
+        Welcome to DiscordV2 !
+      </h1>
       {/* <div className="img-container" id="authbg">
         <img className="bgimg" src={authbg} alt="" />
       </div> */}
