@@ -6,11 +6,9 @@ import './App.css';
 
 function App() {
   return (
-    <div>
-      <LoginRequestProvider>
-        <Routes />
-      </LoginRequestProvider>
-    </div>
+    <LoginRequestProvider>
+      <Routes />
+    </LoginRequestProvider>
   );
 }
 
