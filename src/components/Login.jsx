@@ -34,7 +34,7 @@ function Login() {
 
   return (
     <div id="container">
-      <h1>Connectez vous!</h1>
+      <h1 className="titleLogin">Connectez vous!</h1>
       <form
         onSubmit={(event) => {
           event.preventDefault();

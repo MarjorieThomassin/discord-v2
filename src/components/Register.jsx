@@ -9,7 +9,7 @@ function Register() {
 
   return (
     <div className="registerForm-container">
-      <h1>Inscrivez vous !</h1>
+      <h1 className="titleLogin">Inscrivez vous !</h1>
       <form
         className="registerForm"
         onSubmit={(event) => {
