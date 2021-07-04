@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
-import '../CSS/Home.css';
+import '../CSS/Settings.css';
 import { Redirect } from 'react-router-dom';
 import { useLoginRequest } from '../context/loginRequest';
 
@@ -35,20 +35,21 @@ function Settings() {
   };
 
   return (
-    <div className="Title">
-      <h1>Bienvenue !</h1>
-      <p>Pour pouvoir accéder à ton profil, merci de le compléter au préalable !</p>
-      <label className="pseudo" htmlFor="pseudo">
-        <input className="inputPseudo" type="pseudo" ref={pseudoInput} id="pseudo" placeholder="Ton Pseudo" />
-      </label>
-      <label className="bio" htmlFor="bio" id="bio">
-        <input className="inputBio" type="text" ref={bioInput} placeholder="Parle nous de toi !" />
-      </label>
-      <label className="image" htmlFor="image" id="image">
-        <input className="inputImage" ref={imageInput} type="file" onChange={changeAvatar} />
-      </label>
-      <div>
+    <div className="settings">
+      <h1 className="titleSettings">Bienvenue !</h1>
+      <div className="formSettings">
+        <p>Pour pouvoir accéder à ton profil, merci de le compléter au préalable !</p>
+        <label className="pseudo" htmlFor="pseudo">
+          <input className="inputPseudo" type="pseudo" ref={pseudoInput} id="pseudo" placeholder="Ton Pseudo" />
+        </label>
+        <label className="bio" htmlFor="bio" id="bio">
+          <input className="inputBio" type="text" ref={bioInput} placeholder="Parle nous de toi !" />
+        </label>
+        <label className="image" htmlFor="image" id="image">
+          <input className="inputImage" ref={imageInput} type="file" onChange={changeAvatar} />
+        </label>
         <button
+          className="saveBtn"
           type="submit"
           onClick={() => {
             handleSubmit();
