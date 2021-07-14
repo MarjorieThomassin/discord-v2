@@ -3,7 +3,7 @@ import '../CSS/Servers.css';
 
 function Servers() {
   return (
-    <div className="serverContainer">
+    <div className="pageContainer">
       <div className="TitleServer">
         <h1>Your Servers</h1>
       </div>
