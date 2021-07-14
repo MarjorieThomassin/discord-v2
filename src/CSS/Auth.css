@@ -35,10 +35,15 @@
     font-family: 'victoriacat';
     src: url(../fonts/VictoriaCAT.ttf);
     }
+    @font-face {
+        font-family: 'boltonEBoltonShadowed.ttf';
+        src: url(../fonts/BoltonShadowed.ttf);
+        }
+    
 
 
 #auth {
-    background: url("../assets/bg5.jpg");
+    background: url("../assets/bg3.jpg");
     z-index: 0;
     background-repeat: no-repeat;
     background-size: cover;
@@ -66,15 +71,15 @@
     max-width:20%;
 }
 
-h1 {
+/* h1 {
     font-size: 4rem;
     text-align: center;
-    font-family: 'quencrg';
+    font-family: 'boltonEBoltonShadowed.ttf';
     margin-top: 2rem;
     margin-left: 4rem;
     color: #fbc560;
     -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: #01121a;
+    -webkit-text-stroke-color: #01121a; */
     /* text-shadow:
       0 0 6px rgba(206, 188, 87, 0.92),
       0 0 30px rgba(202,228,225,0.34),
@@ -82,10 +87,10 @@ h1 {
       0 0 21px rgba(242, 228, 30, 0.92),
       0 0 34px rgba(0, 0, 0, 0.78),
       0 0 54px rgba(12, 14, 15, 0.92); */
-}
+
 
 .btn-log-containers {
-    background-image: url('../assets/bgform.jpg');
+    /* background-image: url('../assets/bg3.jpg'); */
     margin-top: 15rem; 
     transform: translateY(-50%);
     max-width: 25%;
@@ -94,14 +99,14 @@ h1 {
     justify-content: space-between;
     margin-left: auto;
     margin-right:auto;
-     box-shadow:
+     /* box-shadow:
     0 0 8px #ffffff,
     inset 0 0 8px #ffffff,
     0 0 16px #0e4447,
     inset 0 0 16px #0e4447,
     0 0 32px #0e4447,
     inset 0 0 32px #0e4447; 
-    border-radius: 5%;
+    border-radius: 5%; */
     /* background: linear-gradient(217deg, #952848, rgba(255,0,0,0) 70.71%),
     linear-gradient(127deg, #dba181, rgba(0,255,0,0) 70.71%),
     linear-gradient(336deg, #354ace, rgba(0,0,255,0) 70.71%); */
@@ -111,30 +116,33 @@ h1 {
 
 }
 
-.sbt-btn {
+.sbt-btn { 
     margin: auto;
-    min-height: 3rem;
+    /* min-height: 3rem;
     min-width: 5rem;
     max-height: 5rem;
-    max-width: 6rem;
+    max-width: 6rem; */
     color: #2d222e;
     border: 0.2rem solid #0e4447;
     border-radius: 5%;
     font-family: 'victoriacat';
-    font-size: 1rem;
+    font-size: 1.5rem;
+    padding: 1.5rem;
 }
 
 .sbt-btn:hover {
     color: #ffffff;
-    background: linear-gradient(to right, #b29f94, #603813);
-    border: 0.1rem solid #603813;
+    background: #ffd89b;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #19547b, #ffd89b);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #19547b, #ffd89b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+    border: 0.1rem solid #0e4447;
     box-shadow:
-    0 0 8px #b29f94,
-    inset 0 0 8px #b29f94,
-    0 0 16px #ce8541,
-    inset 0 0 16px #ce8541,
-    0 0 32px #ce8541,
-    inset 0 0 32px #ce8541; 
+    0 0 8px #609092,
+    inset 0 0 8px #609092,
+    0 0 16px #0e4447,
+    inset 0 0 16px #0e4447,
+    0 0 32px #0e4447,
+    inset 0 0 32px #0e4447; 
 }
 /* 
 h1 {

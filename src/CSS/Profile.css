@@ -3,13 +3,74 @@
 * {
   margin: 0;
   padding: 0;
+
+}
+.navContainer {
+  /* display: grid;
+  /* grid-template-columns: repeat(3, 0.09fr); */
+ /* grid-template-columns: 0.1fr 0.2fr 0.9fr;
+  grid-auto-rows: 100px, auto;
+  gap: 0; */
+  display: flex;
+  flex-direction: row;
 }
 
-.LinkContainer {
-  min-width: 10%;
-  background-color:rgb(44, 43, 42);
+.displayServers {
+  border-top: 1px solid grey ;
+}
+
+.homeLogo {
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+.homeLogo:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.searchBar {
+  display: flex;
+  background-color: #2f3136;
+  border-bottom: solid 1px black;
+  height: 5vh;
+  margin-top: 0.4rem;
+}
+
+.searchInput {
+  margin: 0.4rem;
+  border-radius: 5%;
+  background-color: #202225;
+  border: solid 1px #202225;
+  color:#4d5e5b;
+  font-size: 1rem;
+  padding: 0.3rem;
+  width: 100%;
+}
+
+.navServers {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-left: 0.4rem;
+  width: 6%;
   height: 100vh;
-  border-right: thick double rgb(185, 163, 62);;
+  background-color: #202225;
+
+}
+
+ li {
+  list-style: none;
+ }
+
+.imgServer {
+  text-align: center;
+  width: 70%;
+  margin-right: 0.2rem;
+  margin-top: 1rem;
+  border-radius: 50%;
+  border: solid 1px black;
 }
 
 .NavContainer {
@@ -17,30 +78,137 @@
  flex-direction: row;
 }
 
-ul {
+.NavList {
+  background-color: #2f3136;
   display: flex;
   flex-direction: column;
   list-style: none;
-  text-align: center;
-  margin-top: 6vh;
+  justify-content: left;
+  border-right: solid 2px black;
+  width: 15%;
 }
 
-.ComponentsRoutes {
-    margin:0;
-    width: 100%;
+.maintitle {
+  color: #8e9297;
+  font-family: 'bolton';
+  font-size: 1rem; 
+  margin-left: 1rem;
+  padding-top: 0.5rem;
 }
+
+.LinkNav {
+  margin-left: 1.5rem;
+  margin-top: 3rem;
+  color: #8e9297;
+}
+
+.titleMessages {
+  text-decoration: none;
+  color: #8e9297;
+  margin-bottom: 1rem;
+  font-family: 'bolton';
+  text-align: left;
+  font-size: 1rem;
+  margin-left: 1.2rem;
+  padding-left: 0.6rem;
+  margin-top: 4rem;
+}
+
 a {
   text-decoration: none;
-  color: rgb(214, 188, 117);
+  color: #8e9297;
   margin-bottom: 12vh;
-  font-family: 'Fredericka the Great', cursive;
+  font-family: 'bolton';
   text-align: center;
-  font-size: 3vh;
-  
+  font-size: 1rem;
+  padding-left: 0.4rem;
 }
 
 a:hover {
-    color: rgb(240, 217, 16);
+    color: #8e9297;
     transition: font-size 1s;
     font-size: 25px;
+}
+
+.pageContainer {
+  background-color: #36393f;
+  width: 100%;
+}
+
+.friendList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+.friend {
+  display: flex;
+  flex-direction: row;
+  font-family: 'bolton';
+  font-size: 1.1rem;
+  color: #7e8484;
+  margin-bottom: 2rem;
+  margin-left: 0.8rem;
+  margin: 1rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.pseudoFriend {
+  padding-top: 1.3rem;
+  padding-left: 1rem;
+}
+
+.friend:hover{
+
+  background-color: #393a3d;
+
+}
+
+.logoFriend {
+  max-width: 28%;
+}
+
+.navFriendContainer {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  list-style: none;
+  border-bottom: solid 1px black;
+}
+
+.displayNav {
+  font-family: 'bolton';
+  font-size: 1rem;
+  margin-right: 0.2rem;
+  margin-left: 1rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.4rem;
+  color: #fefefe;
+  border-right: solid 1px black;
+  padding-right: 1rem;
+}
+
+.navFriend {
+  font-family: 'bolton';
+  font-size: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.4rem;
+  color: #828285;
+
+}
+
+.addFriend {
+  background-color: #3ba55d;
+  border: solid 1px #3ba55d;
+  border-radius: 8%;
+  padding-left: 0.5rem;
+  color:white;
+  font-weight: bold;
+  font-size: 0.6rem;
+  padding-right: 0.5rem;
 }
